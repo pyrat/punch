@@ -279,40 +279,18 @@ Main {
 #
 
   BEGIN {
-    require 'yaml'
-    require 'yaml/store'
-    require 'time'
-    require 'pathname'
-    require 'tempfile'
-    require 'fileutils'
-
-    begin
-      require 'rubygems'
-    rescue
-      42
-    end
-
-    begin
-      require 'main'
-    rescue
-      abort "gem install main"
-    end
-
-    begin
-      require 'orderedhash'
-    rescue
-      abort "gem install orderedhash"
-    end
-
-    begin
-      require 'chronic'
-    rescue
-      abort "gem install chronic"
+    %w(yaml yaml/store time pathname tempfile fileutils).each {|lib| require lib}
+    %w(rubygems main orderedhash chronic attributes).each do |depends|
+      begin
+        require depends
+      rescue
+        abort "gem install #{depends}"
+      end
     end
 
     Home = File.expand_path(ENV['HOME'] || '~')
 
-  ### hackity hack, don't talk back
+    ### hackity hack, don't talk back
 
     class Object
       def yaml_inline!
