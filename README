@@ -1,0 +1,27 @@
+NAME
+  punch
+
+SYNOPSIS
+  punch (in|out|log|clock|status|list|total|delete|dump|parse) [options]+
+
+DESCRIPTION
+  i can has time tracking!
+  
+  punch is a k.i.s.s. tool for tracking the hours spent on various projects.
+  it supports logging hours under a project name, adding notes about work 
+  done during that period, and several very simple reporting tools that 
+  operate over a window of time.
+  
+  run 'punch help modename' for more info.
+
+PARAMETERS
+  --help, -h 
+
+EXAMPLES
+  . punch in projectname
+  . punch in projectname 'an hour ago'
+  . punch log projectname 'rewriting your java app in ruby...'
+  . punch out projectname
+  . punch total projectname --after 2007-12-03 --before 2007-12-07
+  . punch total projectname --after 'yesterday morning' --before 'today at noon' 
+
