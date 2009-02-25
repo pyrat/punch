@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = 'punch'
-  s.version           = '0.1.0'
+  s.version           = '0.1.1'
   s.date              = '2009-02-25'
   s.summary           = 'Punch timetracker'
   s.description       = 'Simple commmand line based timetracker in ruby.'
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors           = ['Ara T. Howard']
   s.has_rdoc          = false
   s.files             = %w( bin/punch install.rb gemspec.rb README )
-
+  s.executables       = %w(punch)
   
   s.add_dependency 'main', '>= 2.6.0'
   s.add_dependency 'systemu', '>= 1.2.0' 
